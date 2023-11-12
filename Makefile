@@ -10,5 +10,10 @@ install:
 	@echo "[*] Installing Dependencies"
 	@venv/bin/pip install -r requirements.txt
 
+# Run the simulation
+run:
+	@echo "[*] Running the Simulation"
+	@venv/bin/python3 main.py
+
 # Phony Targets
-.PHONY: install
+.PHONY: install run
