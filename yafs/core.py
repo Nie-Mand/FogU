@@ -14,10 +14,10 @@ import simpy
 import warnings
 import random
 
-from src.topology import Topology
-from src.application import Application
-from src.metrics import Metrics
-from src.distribution import *
+from topology import Topology
+from application import Application
+from metrics import Metrics
+from distribution import *
 
 EVENT_UP_ENTITY = "node_up"
 EVENT_DOWN_ENTITY = "node_down"
@@ -442,7 +442,7 @@ class Sim:
             # print("TOPO.src ", message.path[0]) #entity that RtR
             # print("TOPO.dst ", int(self.alloc_DES[des])) #DES process that RtR
             # print("time service ",time_service)
-            # print("original_DES_src ",message.original_DES_src) #when a message comes from a SRC.pure (user)
+            # print("original_DES_src ",message.original_DES_src) #when a message comes from a pure (user)
 
 
 
@@ -465,7 +465,7 @@ class Sim:
                     if self.alloc_DES[eDES] == message.path[0]:
                         sourceDES = eDES
             except:
-                #The message comes from a SRC.entity (an user)
+                #The message comes from a entity (an user)
                 sourceDES = message.original_DES_src
 
             # print "Source DES ",sourceDES
@@ -1115,7 +1115,7 @@ class Sim:
                     fullAssignation[des] = {"ID":self.alloc_DES[des],"Module":module} #DES process are unique for each module/element
 
         print("-"*40)
-        print("DES\t| TOPO \t| Src.Mod \t| Modules")
+        print("DES\t| TOPO \t| Mod \t| Modules")
         print("-" * 40)
         for k in self.alloc_DES:
             print(k,"\t|",self.alloc_DES[k],"\t|",self.alloc_source[k]["name"] if k in self.alloc_source.keys() else "--","\t\t|",fullAssignation[k]["Module"] if k in fullAssignation.keys() else "--")

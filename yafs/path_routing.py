@@ -1,4 +1,4 @@
-from src.selection import Selection
+from selection import Selection
 import networkx as nx
 from collections import Counter
 

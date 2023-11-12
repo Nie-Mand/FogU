@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from src.metrics import Metrics
+from metrics import Metrics
 
 
 class Stats:
